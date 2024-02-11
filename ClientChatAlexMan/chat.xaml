@@ -1,0 +1,41 @@
+﻿<Window x:Class="ClientChatAlexMan.chat"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClientChatAlexMan"
+        mc:Ignorable="d"
+        Title="chat" Height="450" Width="800" Background="Purple">
+    <DockPanel>
+        <ToolBarPanel DockPanel.Dock="Bottom">
+            <ToolBarTray>
+                <ToolBar>
+                    <Button x:Name="btnListUsers" Content="User List" Click="btnListUsers_Click"/>
+                </ToolBar>
+            </ToolBarTray>
+        </ToolBarPanel>
+        <DockPanel DockPanel.Dock="Top" Margin="20">
+            <Button x:Name="btnRebre" Content="Recive" DockPanel.Dock="Left" Width="100" Margin="50,0,0,0" Click="btnRebre_Click"/>
+            <Button x:Name="btnEnviar" Content="Send" DockPanel.Dock="Left" Width="100" Margin="50,0,0,0" Click="btnEnviar_Click"/>
+            <TextBox x:Name="txtMissatge" Width="450" VerticalAlignment="Bottom"/>
+        </DockPanel>
+        <Grid DockPanel.Dock="Top" Margin="0,20,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Sender/Reciver:" Margin="0,0,10,0" FontWeight="Bold"/>
+                <TextBox x:Name="txtReceptor" Width="150"/>
+            </StackPanel>
+            <DockPanel Grid.Column="1" HorizontalAlignment="Center">
+                <TextBlock DockPanel.Dock="Top" Text="DD/MM/YYYY" Foreground="White"/>
+                <TextBox x:Name="txtFiltrarMissatgesDataHora" Margin="0,0,50,0" Width="150"/>
+                <Button x:Name="btnFiltrar" Content="Filter" Width="100" Click="btnFiltrar_Click"/>
+            </DockPanel>
+        </Grid>
+        <DockPanel DockPanel.Dock="Bottom">
+            <TextBox x:Name="txtXat" Padding="10"/>
+        </DockPanel>
+    </DockPanel>
+</Window>
